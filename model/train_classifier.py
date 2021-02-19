@@ -33,8 +33,6 @@ def load_data(database_filepath):
     #connecting to Database and load data
     engine = create_engine('sqlite:///' + str(database_filepath))
     df = pd.read_sql_table('DisasterResponseTable', engine)
-    
-    df['related']=df['related'].map(lambda x: 1 if x == 2 else x)
 
     X = df['message'].values
     y = df.iloc[:,4:]
@@ -63,8 +61,8 @@ def tokenize(text):
 
 def build_model():
     """
-    Classifier is build using pipeline. GridSearch is used to fine tune the paramenter.
-    Only two were fine tuned but more can be used. The function return the model to be trained
+        Classifier is build using pipeline. GridSearch is used to fine tune the paramenter.
+        Only two were fine tuned but more can be used. The function return the model to be trained
     """
     #using Pipeline to build classifier
     pipeline = Pipeline([
