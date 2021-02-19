@@ -27,6 +27,8 @@ This project requires Python 3.x and the following Python libraries installed:
 - Sys
 - Re
 - Pickle
+- json
+- plotly
 
 # Instructions to run the project:
 1. Run the following commands in the project's root directory to set up your database and model.
