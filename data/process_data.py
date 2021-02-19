@@ -70,7 +70,6 @@ def save_data(df, database_filename):
     """
     
     engine = create_engine('sqlite:///'+ database_filename)
-#     df.to_sql('DisasterResponseTable', engine, if_exists='replace', index=False)  
     table_name = database_filename.replace(".db","") + "Table"
     df.to_sql(table_name, engine, index=False, if_exists='replace')  
 
